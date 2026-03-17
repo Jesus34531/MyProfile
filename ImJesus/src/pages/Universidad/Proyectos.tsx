@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Trabajos: React.FC = () => {
+export const Proyectos: React.FC = () => {
   return (
     <div>
       <h2>Trabajos Universitarios</h2>

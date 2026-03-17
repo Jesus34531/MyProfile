@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Deportes: React.FC = () => {
+export const Musica: React.FC = () => {
   return (
     <div>
       <h2>Deportes</h2>
