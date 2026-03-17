@@ -1,0 +1,48 @@
+/* Paleta de colores solicitada */
+:root {
+  --color-principal: #1e2956;
+  --color-secundario: #373d86;
+  --color-terciario: #111428;
+  --color-extra-1: #5457bb;
+  --color-extra-2: #140f07;
+  --text-light: #ffffff;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-terciario);
+  color: var(--text-light);
+  font-family: sans-serif;
+}
+
+/* Clases base para responsividad y diseño que puedes editar */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- Animación de lluvia de emojis --- */
+.emoji-rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Para que no interfieran con los clicks */
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.emoji {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
