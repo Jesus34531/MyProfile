@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // 💡 TIP: Cuando tengas tu logo, impórtalo aquí arriba igual que hicimos con tu foto
- import miLogo from '../assets/Logo_programador.png'; 
+import miLogo from '../assets/Logo_programador.png'; 
 
 export const Navbar: React.FC = () => {
   return (
@@ -27,19 +27,14 @@ export const Navbar: React.FC = () => {
       {/* 2. ZONA CENTRAL (Enlaces) */}
       <ul className="nav-links" style={{ display: 'flex', gap: '30px', listStyle: 'none', margin: 0, padding: 0 }}>
         <li>
-          <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: '600' }}>
-            Mi Perfil
-          </Link>
+          {/* 👇 ¡Magia! Le quitamos el style a los Links. Ahora obedecerán a tu global.css 👇 */}
+          <Link to="/">Mi Perfil</Link>
         </li>
         <li>
-          <Link to="/hobbies" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: '600' }}>
-            Hobbies
-          </Link>
+          <Link to="/hobbies">Hobbies</Link>
         </li>
         <li>
-          <Link to="/universidad" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: '600' }}>
-            Universidad
-          </Link>
+          <Link to="/universidad">Universidad</Link>
         </li>
       </ul>
 

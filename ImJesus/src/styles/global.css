@@ -39,14 +39,15 @@ h1, h2, h3, h4, h5, h6 {
 .navbar .nav-links a {
   color: var(--text-light); /* Texto en color blanco */
   text-decoration: none;    /* Quitamos la línea de abajo del enlace */
-  font-size: 1.2rem;        /* Un tamaño excelente para Audiowide */
+  font-size: 2.2rem;        /* Un tamaño excelente para Audiowide */
   letter-spacing: 1px;      /* Separamos un poquito las letras para que se vea más tech */
   transition: color 0.3s ease; /* Preparamos una animación suave para cuando pases el mouse */
 }
 
 /* Efecto Hover: Cuando pases el mouse, cambiará al color extra-1 (#5457bb) */
 .navbar .nav-links a:hover {
-  color: var(--color-extra-1);
+  
+  color: cornflowerblue;
 }
 
 /* --- Animación de lluvia de emojis --- */
