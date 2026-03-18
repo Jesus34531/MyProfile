@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 // Puedes cambiar los emojis aquí
-const emojisArray = ['💻', '🎵', '⚽', '📚', '✨', '🚀'];
+const emojisArray = ['💻', '🎵', '⚾', '📚', '✨', '🏎️','🎸','🥷'];
 
 export const EmojiRain: React.FC = () => {
   const [drops, setDrops] = useState<Array<{ id: number; left: number; delay: number; duration: number; emoji: string }>>([]);

@@ -1,22 +1,52 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// 💡 TIP: Cuando tengas tu logo, impórtalo aquí arriba igual que hicimos con tu foto
+ import miLogo from '../assets/Logo_programador.png'; 
+
 export const Navbar: React.FC = () => {
   return (
-    // Edita los estilos de esta etiqueta <nav> en tu CSS para darle flexbox (display: flex; justify-content: space-between;)
-    <nav className="navbar" style={{ backgroundColor: 'var(--color-principal)', padding: '1rem' }}>
+    <nav 
+      className="navbar" 
+      style={{ 
+        backgroundColor: 'var(--color-principal)', 
+        padding: '1rem 2rem', // Añadimos padding a los lados para que el logo no pegue con el borde
+        display: 'flex', 
+        alignItems: 'center', // Alinea todo verticalmente al centro
+        boxShadow: '0 4px 10px rgba(0,0,0,0.2)' // Sombra sutil para darle volumen
+      }}
+    >
       
-      {/* Espacio reservado para tu Logo */}
-      <div className="logo-container">
-        <h2>[Tu Logo Aquí]</h2>
+      {/* 1. ZONA IZQUIERDA (Logo) */}
+      {/* Al darle flex: 1, esta zona empuja a la del medio para que se quede en el centro exacto */}
+      <div className="logo-container" style={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+        {/* Usé un tamaño de 60x60, 100x100 suele ser muy grande para una barra, ¡pero ajústalo a tu gusto! */}
+        <img src={miLogo} alt="Mi Logo" width={150} height={150} style={{borderRadius:'20%',  backgroundColor: 'var(--color-terciario)' }} />
       </div>
 
-      {/* Enlaces de navegación */}
-      <ul className="nav-links" style={{ display: 'flex', gap: '20px', listStyle: 'none' }}>
-        <li><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Mi Perfil</Link></li>
-        <li><Link to="/hobbies" style={{ color: 'white', textDecoration: 'none' }}>Hobbies</Link></li>
-        <li><Link to="/universidad" style={{ color: 'white', textDecoration: 'none' }}>Universidad</Link></li>
+      {/* 2. ZONA CENTRAL (Enlaces) */}
+      <ul className="nav-links" style={{ display: 'flex', gap: '30px', listStyle: 'none', margin: 0, padding: 0 }}>
+        <li>
+          <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: '600' }}>
+            Mi Perfil
+          </Link>
+        </li>
+        <li>
+          <Link to="/hobbies" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: '600' }}>
+            Hobbies
+          </Link>
+        </li>
+        <li>
+          <Link to="/universidad" style={{ color: 'white', textDecoration: 'none', fontSize: '1.1rem', fontWeight: '600' }}>
+            Universidad
+          </Link>
+        </li>
       </ul>
+
+      {/* 3. ZONA DERECHA (Espaciador Invisible) */}
+      {/* Este div vacío con flex: 1 equilibra el lado derecho para que los enlaces queden centrados perfectamente */}
+      <div style={{ flex: 1 }}></div>
+
     </nav>
   );
 };

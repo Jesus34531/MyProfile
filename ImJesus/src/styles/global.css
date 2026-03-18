@@ -1,25 +1,52 @@
-/* Paleta de colores solicitada */
 :root {
+  /* Tus colores */
   --color-principal: #1e2956;
   --color-secundario: #373d86;
   --color-terciario: #111428;
   --color-extra-1: #5457bb;
   --color-extra-2: #140f07;
   --text-light: #ffffff;
+  
+  /* Tus 4 fuentes listas para usar */
+  --font-header: 'Audiowide',sans-serif;
+  --font-titulos-pagina: 'Montserrat Alternates', sans-serif;
+  --font-texto-general: 'Share Tech', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
 }
 
+/* 1. TEXTO GENERAL DE LA PÁGINA */
 body {
   margin: 0;
   background-color: var(--color-terciario);
   color: var(--text-light);
-  font-family: sans-serif;
+  font-family: var(--font-texto-general); /* Usa Share Tech para leer fácil */
+  line-height: 1.6;
 }
 
-/* Clases base para responsividad y diseño que puedes editar */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+/* 2. TÍTULOS DE LAS PÁGINAS (Los h1, h2, etc. de tu contenido) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-titulos-pagina); /* Usa Montserrat Alternates */
+  margin-top: 0;
+}
+
+/* 3. TÍTULOS DEL HEADER (Barra de navegación) */
+.navbar {
+  font-family: var(--font-header); /* Aplica Audiowide */
+}
+
+/* IMPORTANTE: Como Audiowide es una fuente normal (no 3D como Nabla), 
+   debemos asegurarnos de que los enlaces sean blancos y legibles */
+.navbar .nav-links a {
+  color: var(--text-light); /* Texto en color blanco */
+  text-decoration: none;    /* Quitamos la línea de abajo del enlace */
+  font-size: 1.2rem;        /* Un tamaño excelente para Audiowide */
+  letter-spacing: 1px;      /* Separamos un poquito las letras para que se vea más tech */
+  transition: color 0.3s ease; /* Preparamos una animación suave para cuando pases el mouse */
+}
+
+/* Efecto Hover: Cuando pases el mouse, cambiará al color extra-1 (#5457bb) */
+.navbar .nav-links a:hover {
+  color: var(--color-extra-1);
 }
 
 /* --- Animación de lluvia de emojis --- */
