@@ -1,10 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './styles/global.css'; // Importamos los estilos globales
+import './styles/global.css'; 
 
 // Layout y Perfil
 import { Layout } from './components/Layout';
 import { Perfil } from './pages/Perfil';
+
+// --- IMPORTA TU COMPONENTE DE IA AQUÍ ---
+import ModeloIA from './pages/ModeloIA'; // Ajusta la ruta si está en otra carpeta
 
 // Rutas de Hobbies
 import { Hobbies } from './pages/Hobbies/Hobbies';
@@ -22,12 +25,14 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Layout es el padre, solo va una vez */}
         <Route path="/" element={<Layout />}>
           
           {/* Rutas de Perfil */}
           <Route index element={<Perfil />} />
           <Route path="perfil" element={<Perfil />} />
+
+          {/* --- NUEVA RUTA PARA LA IA --- */}
+          <Route path="ia" element={<ModeloIA />} />
           
           {/* Rutas anidadas para Hobbies */}
           <Route path="hobbies" element={<Hobbies />}>

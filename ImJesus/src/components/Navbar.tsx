@@ -36,6 +36,9 @@ export const Navbar: React.FC = () => {
         <li>
           <Link to="/universidad">Universidad</Link>
         </li>
+        <li>
+          <Link to="/ia">Chat IA</Link>
+        </li>
       </ul>
 
       {/* 3. ZONA DERECHA (Espaciador Invisible) */}
